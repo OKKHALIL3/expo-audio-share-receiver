@@ -1,15 +1,18 @@
-import { registerWebModule, NativeModule } from 'expo';
+import type { AudioFile } from './ExpoAudioShareReceiver.types';
 
-import { ExpoAudioShareReceiverModuleEvents } from './ExpoAudioShareReceiver.types';
+export default {
+  async setAppGroup(_groupId: string) {
+    console.warn('ExpoAudioShareReceiver: setAppGroup() not supported on web.');
+  },
 
-class ExpoAudioShareReceiverModule extends NativeModule<ExpoAudioShareReceiverModuleEvents> {
-  PI = Math.PI;
-  async setValueAsync(value: string): Promise<void> {
-    this.emit('onChange', { value });
+  async getSharedAudioFiles(): Promise<AudioFile[]> {
+    console.warn('ExpoAudioShareReceiver: getSharedAudioFiles() not supported on web.');
+    return [];
+  },
+
+  async refreshFiles(): Promise<AudioFile[]> {
+    console.warn('ExpoAudioShareReceiver: refreshFiles() not supported on web.');
+    return [];
   }
-  hello() {
-    return 'Hello world! 👋';
-  }
-}
+};
 
-export default registerWebModule(ExpoAudioShareReceiverModule, 'ExpoAudioShareReceiverModule');
