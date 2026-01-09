@@ -1,4 +1,4 @@
-# Expo Audio Share Receiver
+#  🎧 Expo Audio Share Receiver
 
 A React Native / Expo module that makes your app appear in the iOS Share Sheet for audio files, saves shared audio to an App Group container, and surfaces the file paths to your JS/TS code so you can build your own UI. The package ships with a ready-to-wire Share Extension; host apps only configure capabilities and identifiers—no Swift changes required.
 
