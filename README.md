@@ -126,6 +126,6 @@ Align the App Group ID and deep link between the extension (`ShareViewController
 
 ## Notes
 
-- All file access is local; no network calls are made.  
-- Ensure both the host app and extension have the same App Group entitlement.  
-- If the App Group ID is wrong or missing, files will not be readable by the host app.
+- **Currently iOS only** — Web and Android stubs are included but do not support file sharing
+- **Supports multiple audio files** — Users can share multiple files at once
+- **All file access is local** — No network connection required
