@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-audio-share-receiver": ["../src/index"],
+      "expo-audio-share-receiver/*": ["../src/*"]
+    }
+  }
+}

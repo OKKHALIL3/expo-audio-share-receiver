@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["ExpoAudioShareReceiverModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.audiosharereceiver.ExpoAudioShareReceiverModule"]
+  }
+}
