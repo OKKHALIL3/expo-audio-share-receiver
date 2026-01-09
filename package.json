@@ -28,6 +28,7 @@
   "author": "OKKHALIL3 (https://github.com/OKKHALIL3/)",
   "license": "MIT",
   "homepage": "https://github.com/OKKHALIL3/expo-audio-share-receiver#readme",
+  "files": ["src", "ios"],
   "dependencies": {},
   "devDependencies": {
     "@types/react": "~19.1.0",
