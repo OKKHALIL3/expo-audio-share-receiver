@@ -7,7 +7,7 @@ public class ExpoAudioShareReceiverModule: Module {
     public func definition() -> ModuleDefinition {
         Name("ExpoAudioShareReceiver")
         
-        Function("setAppGroup") { (group: String) in
+        AsyncFunction("setAppGroup") { (group: String) in
             self.groupName = group
         }
         
