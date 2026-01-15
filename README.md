@@ -22,8 +22,6 @@ A React Native / Expo module that makes your app appear in the iOS Share Sheet f
 
 ```bash
 npm install expo-audio-share-receiver
-# or
-yarn add expo-audio-share-receiver
 ```
 
 ---
