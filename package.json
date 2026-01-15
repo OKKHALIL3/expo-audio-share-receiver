@@ -1,6 +1,6 @@
 {
   "name": "expo-audio-share-receiver",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Expo Module to receive audio files from iOS share sheet and access them in React Native.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
