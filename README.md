@@ -124,6 +124,8 @@ function useAudioShareHandler(onFilesReceived: (files: {path: string}[]) => void
       const files = await AudioShare.getSharedAudioFiles();
       if (files.length > 0) {
         onFilesReceived(files);
+        // Optional: Clear files after processing to free up space
+        // await AudioShare.clearSharedFiles();
       }
     };
 
@@ -159,6 +161,9 @@ type AudioFile = { path: string }
 
 - `refreshFiles(): Promise<AudioFile[]>`
   Reads files and emits `onNewFiles` with `{ files: string[] }`.
+
+- `clearSharedFiles(): Promise<void>`
+  Clears all shared audio files from the App Group container. Useful for cleanup after processing files.
 
 - **Event** `onNewFiles`
   Fired when `refreshFiles` runs. Subscribe with `EventEmitter` from `expo-modules-core`.
@@ -208,6 +213,9 @@ export function SharedAudioHandler({
         const files = await AudioShare.getSharedAudioFiles();
         if (files.length > 0) {
           onFilesReceived(files);
+          // Optional: Clear shared files after successful processing
+          // This frees up space in the App Group container
+          // await AudioShare.clearSharedFiles();
         }
       } finally {
         handlingRef.current = false;
@@ -230,7 +238,7 @@ export function SharedAudioHandler({
 - **Currently iOS only** — Web and Android stubs are included but do not support file sharing
 - **Supports multiple audio files** — Users can share multiple files at once
 - **All file access is local** — No network connection required
-- **Files persist in App Group** — Clean up old files manually if needed
+- **Files persist in App Group** — Files remain in the App Group container until explicitly cleared. Use `clearSharedFiles()` to clean up after processing to free up space
 
 ---
 
