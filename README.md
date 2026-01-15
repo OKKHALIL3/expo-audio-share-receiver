@@ -231,3 +231,115 @@ export function SharedAudioHandler({
 - **Supports multiple audio files** — Users can share multiple files at once
 - **All file access is local** — No network connection required
 - **Files persist in App Group** — Clean up old files manually if needed
+
+---
+
+## Contributing
+
+Contributions are welcome! Whether it's bug fixes, new features, documentation improvements, or platform support, your help makes this package better for everyone.
+
+### Getting Started
+
+1. **Fork the repository**
+
+   Create your own copy of the project under your GitHub account. This allows you to make changes freely.
+
+2. **Clone your fork**
+
+   ```bash
+   git clone https://github.com/your-username/expo-audio-share-receiver.git
+   cd expo-audio-share-receiver
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Create a feature branch**
+
+   Always work on a new branch instead of `main`:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   # or
+   git checkout -b fix/bug-description
+   ```
+
+### Making Changes
+
+- Follow the existing code style and conventions
+- Test your changes thoroughly, especially if modifying native code
+- Update documentation if you're adding new features or changing APIs
+- For Swift/Kotlin changes, ensure code compiles on both debug and release builds
+
+### Committing Your Work
+
+1. **Stage your changes**
+
+   ```bash
+   git add .
+   ```
+
+2. **Write clear commit messages**
+
+   ```bash
+   git commit -m "Add support for audio metadata extraction"
+   ```
+
+   Good commit messages describe **what** changed and **why**.
+
+3. **Push to your fork**
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+### Opening a Pull Request
+
+1. Navigate to the original repository on GitHub
+2. Click "New Pull Request" and select your branch
+3. Provide a clear description:
+   - What does this change do?
+   - Why is it useful?
+   - How was it tested?
+   - Any breaking changes or migration notes?
+
+4. Wait for review and be ready to address feedback
+
+### Keeping Your Fork Updated
+
+To stay in sync with the main repository:
+
+```bash
+# Add the upstream remote (only needed once)
+git remote add upstream https://github.com/original-owner/expo-audio-share-receiver.git
+
+# Fetch and merge updates
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
+```
+
+### Development Tips
+
+- **Testing native changes**: Use `npx expo prebuild` in a test Expo app with this module linked locally
+- **Config plugin changes**: Test the plugin thoroughly with `npx expo prebuild --clean`
+- **TypeScript types**: Update type definitions in `src/` when adding new methods
+- **iOS-specific**: Test on real devices when possible, especially for share extension functionality
+
+### Areas for Contribution
+
+- **Android support**: Share extension equivalent for Android
+- **Additional audio formats**: Extend supported file types
+- **File metadata**: Extract and expose audio metadata (title, artist, duration, etc.)
+- **Testing**: Add automated tests for the config plugin and native modules
+- **Documentation**: Examples, troubleshooting guides, or video tutorials
+
+---
+
+## License
+
+This project is open source. Check the `package.json` for license details.
