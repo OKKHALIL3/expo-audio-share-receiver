@@ -22,6 +22,11 @@ export default {
     return paths.map((p: string) => ({ path: p }));
   },
 
+  /** Clears all shared audio files from the App Group container */
+  async clearSharedFiles(): Promise<void> {
+    await ExpoAudioShareReceiver.clearSharedFiles();
+  },
+
   addListener(eventName: string, listener: (event: any) => void): EventSubscription {
     // @ts-ignore: Event types are not strictly typed in this wrapper yet
     return emitter.addListener(eventName, listener);

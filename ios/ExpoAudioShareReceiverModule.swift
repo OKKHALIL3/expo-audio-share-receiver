@@ -23,7 +23,12 @@ public class ExpoAudioShareReceiverModule: Module {
             self.sendEvent("onNewFiles", ["files": files.map { $0.path }])
             return files.map { $0.path }
         }
-        
+
+        AsyncFunction("clearSharedFiles") { () in
+            let finalGroup = self.groupName ?? "group.com.default.audioShare"
+            AudioShareStore.shared.clearStoredFiles(groupName: finalGroup)
+        }
+
         Events("onNewFiles")
     }
 }
