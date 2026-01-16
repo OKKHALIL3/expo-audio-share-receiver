@@ -1,2 +1,11 @@
-<manifest>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--
+    Note: The ShareReceiverActivity is added dynamically by the Expo config plugin
+    (withAndroidShareReceiver.js) to the app's AndroidManifest.xml at build time.
+
+    The plugin adds the activity with proper intent-filters for audio/* MIME types
+    and configures the label and theme based on plugin options.
+
+    This manifest is intentionally minimal - the config plugin handles the rest.
+  -->
 </manifest>

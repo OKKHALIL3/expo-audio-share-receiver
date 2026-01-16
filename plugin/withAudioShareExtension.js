@@ -6,12 +6,17 @@ const {
 const fs = require("fs-extra");
 const path = require("path");
 
+// Import Android plugin
+const withAndroidShareReceiver = require("./withAndroidShareReceiver");
+
 const EXTENSION_TARGET_NAME = "AudioShareExtension";
 const STORYBOARD_NAME = "MainInterface";
 
 /**
  * Config plugin for expo-audio-share-receiver
- * Automatically sets up the iOS Share Extension for audio file sharing
+ * Automatically sets up:
+ * - iOS: Share Extension for audio file sharing via App Groups
+ * - Android: ShareReceiverActivity with intent filters for audio/* MIME types
  */
 const withAudioShareExtension = (config, options = {}) => {
   const {
@@ -27,6 +32,7 @@ const withAudioShareExtension = (config, options = {}) => {
     );
   }
 
+  // === iOS Configuration ===
   // Add App Groups to main app entitlements
   config = withMainAppEntitlements(config, appGroupId);
 
@@ -41,6 +47,13 @@ const withAudioShareExtension = (config, options = {}) => {
   // Add the share extension target to Xcode project
   config = withShareExtensionTarget(config, {
     appGroupId,
+    extensionName: extensionName || config.name,
+  });
+
+  // === Android Configuration ===
+  config = withAndroidShareReceiver(config, {
+    urlSchemes,
+    urlPath,
     extensionName: extensionName || config.name,
   });
 

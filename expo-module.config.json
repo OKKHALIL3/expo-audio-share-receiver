@@ -4,6 +4,7 @@
     "modules": ["ExpoAudioShareReceiverModule"]
   },
   "android": {
-    "modules": ["expo.modules.audiosharereceiver.ExpoAudioShareReceiverModule"]
+    "modules": ["expo.modules.audiosharereceiver.ExpoAudioShareReceiverModule"],
+    "package": "expo.modules.audiosharereceiver.ExpoAudioShareReceiverPackage"
   }
 }
